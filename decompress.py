@@ -12,4 +12,4 @@ def decompress_zstd(input_file):
         decompressed_data = dctx.decompress(f_in.read())
         f_out.write(decompressed_data)
 
-    print(f"Decompressed file: {output_file}")
+    # print(f"Decompressed file: {output_file}")

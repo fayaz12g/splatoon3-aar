@@ -280,7 +280,7 @@ def select_mario_folder():
     ratio_value = (int(numerator_entry.get()) / int(denominator_entry.get()))
     scaling_factor = (16/9) / (int(numerator_entry.get()) / int(denominator_entry.get()))
     username = getpass.getuser()
-    gameid = "0100B99019412000"
+    gameid = "0100C2500FC20000"
     if output_yuzu.get() is True:
         input_folder = f"C:/Users/{username}/AppData/Roaming/yuzu/load/{gameid}"
         process_name = "yuzu.exe"
@@ -341,7 +341,7 @@ def select_mario_folder():
 
     for root, _, files in os.walk(romfs_folder):
         for file in files:
-            if file.lower().endswith(".sarc"):
+            if file.lower().endswith(".blarc"):
                 file_path = os.path.join(root, file)
                 print(f"Extracting {file}.")
                 extract_blarc(file_path)
