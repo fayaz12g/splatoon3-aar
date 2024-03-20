@@ -36,15 +36,15 @@ from extract import extract_blarc
 #### Create Window ####
 #######################
 
-tool_version = "1.0.1"
+tool_version = "1.0.0"
 
 root = customtkinter.CTk()
-root.title(f"Fayaz's Settings {tool_version} for Mario vs Donkey Kong")
+root.title(f"Fayaz's Settings {tool_version} for Splatoon 3")
 root.geometry("500x720")
 
 customtkinter.set_appearance_mode("system")
 customtkinter.set_default_color_theme("blue")  
-windowtitle = customtkinter.CTkLabel(master=root, font=(CTkFont, 20), text="Fayaz's MVDK Utility {tool_version}")
+windowtitle = customtkinter.CTkLabel(master=root, font=(CTkFont, 20), text="Fayaz's Splatton 3 Utility {tool_version}")
 
 ###############################################
 ###########    GLOBAL SETTINGS      ###########
@@ -397,8 +397,8 @@ def pack_widgets():
     aspect_ratio_divider.pack(side="left")
     denominator_entry.pack(side="left")
     
-    # fxaa_checkbox.pack(padx=5, pady=5)
-    # screenshot_checkbox.pack(padx=5, pady=5)
+    fxaa_checkbox.pack(padx=5, pady=5)
+    screenshot_checkbox.pack(padx=5, pady=5)
     # dynamicres_checkbox.pack(padx=10, pady=10)
     # dof_checkbox.pack(padx=10, pady=10)
     # bloom_checkbox.pack(padx=10, pady=10)
@@ -461,8 +461,8 @@ def forget_packing():
     aspect_ratio_divider.pack_forget()
     denominator_entry.pack_forget()
     
-    # fxaa_checkbox.pack_forget()
-    # screenshot_checkbox.pack_forget()
+    fxaa_checkbox.pack_forget()
+    screenshot_checkbox.pack_forget()
     # dynamicres_checkbox.pack_forget()
     # dof_checkbox.pack_forget()
     # bloom_checkbox.pack_forget()
@@ -540,8 +540,8 @@ denominator_entry.configure(text_color='gray')
 denominator_entry.bind("<FocusIn>", lambda event: handle_focus_in(denominator_entry, "9"))
 denominator_entry.bind("<FocusOut>", lambda event: handle_focus_out(denominator_entry, "9"))
 
-fxaa_checkbox = customtkinter.CTkCheckBox(master=notebook.tab("Visuals"), text="Disable FXAA", variable=do_disable_fxaa)
-screenshot_checkbox = customtkinter.CTkCheckBox(master=notebook.tab("Visuals"), text="LOD Increase (Higher Fidelity)", variable=do_screenshot)
+fxaa_checkbox = customtkinter.CTkCheckBox(master=notebook.tab("Visuals"), text="60 FPS", variable=do_disable_fxaa)
+screenshot_checkbox = customtkinter.CTkCheckBox(master=notebook.tab("Visuals"), text="2580x1080 Resolution", variable=do_screenshot)
 dynamicres_checkbox = customtkinter.CTkCheckBox(master=notebook.tab("Visuals"), text="Disable Dynamic Resolution", variable=do_disable_dynamicres)
 dof_checkbox = customtkinter.CTkCheckBox(master=notebook.tab("Visuals"), text="Disable Depth of Field (DOF)", variable=do_disable_dof)
 bloom_checkbox = customtkinter.CTkCheckBox(master=notebook.tab("Visuals"), text="Disable Bloom Effect", variable=do_disable_bloom)
@@ -710,7 +710,7 @@ notebook.add("Credits")
 
 credits_label = ClickableLabel(master=notebook.tab("Credits"), text=
                     ('Utility created by fayaz\n'
-                     'https://github.com/fayaz12g/mvdk-aar\n'
+                     'https://github.com/fayaz12g/splatoon3-aar\n'
                      'ko-fi.com/fayaz12\n'
                      '\n\nWith thanks to\n'
                      'fruithapje21\n'
