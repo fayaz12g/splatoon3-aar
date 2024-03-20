@@ -50,6 +50,10 @@ windowtitle = customtkinter.CTkLabel(master=root, font=(CTkFont, 20), text="Faya
 ###########    GLOBAL SETTINGS      ###########
 ###############################################
 
+# Values
+scaling_factor = 0.762
+HUD_pos = "corner"
+
 # Visuals
 ar_numerator = StringVar(value="16")
 ar_denominator = StringVar(value="9")
@@ -258,8 +262,6 @@ class PrintRedirector:
             self.text_widget.configure(state='disabled')  # Disable user input again
             self.buffer = ""
 
-scaling_factor = 0.762
-HUD_pos = "corner"
 
 def handle_focus_in(entry, default_text):
     if entry.get() == default_text:
@@ -339,7 +341,7 @@ def select_mario_folder():
 
     for root, _, files in os.walk(romfs_folder):
         for file in files:
-            if file.lower().endswith(".blarc"):
+            if file.lower().endswith(".sarc"):
                 file_path = os.path.join(root, file)
                 print(f"Extracting {file}.")
                 extract_blarc(file_path)
@@ -366,8 +368,8 @@ def select_mario_folder():
     for root, dirs, _ in os.walk(romfs_folder):
         if "blyt" in dirs:
             parent_folder = os.path.dirname(root)
-            new_blarc_file = os.path.join(parent_folder, os.path.basename(root) + ".blarc")
-            pack_folder_to_blarc(root, os.path.join(parent_folder, os.path.basename(root) + ".blarc"))
+            new_blarc_file = os.path.join(parent_folder, os.path.basename(root) + ".sarc")
+            pack_folder_to_blarc(root, os.path.join(parent_folder, os.path.basename(root) + ".sarc"))
             shutil.rmtree(root) 
             compress_zstd(new_blarc_file)
             os.remove(new_blarc_file)
