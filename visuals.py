@@ -25,7 +25,7 @@ def create_visuals(do_screenshot, do_disable_fxaa, do_disable_dynamicres, do_dis
     visuals6_0_2 = f'''// 2580x1080 Docked
 @{screenshot}
 04c5f210 8A42C1F2
-@stop
+@disabled
 
 // 60FPS
 @{disablefxaa}
@@ -46,7 +46,7 @@ def create_visuals(do_screenshot, do_disable_fxaa, do_disable_dynamicres, do_dis
     visuals7_0_0 = f'''// 2580x1080 Docked
 @{do_screenshot}
 04c5f210 8A42C1F2
-@stop
+@disabled
 
 // 60FPS
 @{disablefxaa}
